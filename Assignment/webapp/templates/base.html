@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='/img/scissors.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src.css') }}">
+    <meta charset="UTF-8">
+    <title>RPS!</title>
+</head>
+<body>
+<div class="background">
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='/img/rps-logo.png') }}">
+    </a>
+
+    {# MAIN SCREEN #}
+
+    <div class="container">
+
+        {# LIVE GAMES PART #}
+        <div class="live-games">
+            <div class="not-found">
+                <img src="{{ url_for('static', filename='/img/not-found.jpg') }}">
+            </div>
+            <div class="not-found-text">
+                NO LIVE GAMES AT THE MOMENT :(
+            </div>
+        </div>
+        {# END OF LIVE GAMES PART #}
+
+        {% block container %}
+            {# FOR RIGHT PART OF THE CONTAINER #}
+        {% endblock container %}
+    </div>
+
+    {# END OF MAIN SCREEN #}
+
+</div>
+</body>
+</html>

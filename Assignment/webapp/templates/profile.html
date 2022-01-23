@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block container %}
+    <div class="profile">
+        <div class="profile-title" style="font-size: 20px; background-color: orange">{{ player_data.player_name }}</div>
+        <div class="profile-stats">
+            <div class="stat-top">
+                <div class="most-played">
+                    <div style="font-weight: bold; font-size: 30px;">MOST PLAYED HAND</div>
+                    {% if player_data.most_played_hand == 'rock' %}
+                        <div><img src="{{ url_for('static', filename='/img/rock.png') }}"></div>
+                    {% elif player_data.most_played_hand == 'paper' %}
+                        <div><img src="{{ url_for('static', filename='/img/paper.png') }}"></div>
+                    {% else %}
+                        <div><img src="{{ url_for('static', filename='/img/scissors.png') }}"></div>
+                    {% endif %}
+                </div>
+                <div class="hand-numbers">
+                    <div class="hand-box">
+                        <div><img src="{{ url_for('static', filename='/img/rock.png') }}"></div>
+                        <div style="margin-left: 10px; font-weight: bold; font-size: 20px">{{ player_data.player_row.rock }}</div>
+                    </div>
+                    <div class="hand-box">
+                        <div><img src="{{ url_for('static', filename='/img/paper.png') }}"></div>
+                        <div style="margin-left: 10px; font-weight: bold; font-size: 20px;">{{ player_data.player_row.paper }}</div>
+                    </div>
+                    <div class="hand-box">
+                        <div><img src="{{ url_for('static', filename='/img/scissors.png') }}"></div>
+                        <div style="margin-left: 10px; font-weight: bold; font-size: 20px;">{{ player_data.player_row.scissors }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-bottom">
+                <div class="win-ratio">
+                    <div style="margin-bottom: -10px; font-weight: bold; font-size: 20px; ">WIN RATE</div>
+                    <div style="font-size: 100px; color: {% if player_data.win_rate < 50 %}#FF1744 {% else %}#00C853{% endif %}">{{ player_data.win_rate }}%</div>
+                    <div style="margin-top: -10px; font-weight: bold">in {{ player_data.total_games }} games</div>
+                </div>
+                <div class="stat-numbers" style="font-size:25px; color: white">
+                    <div class="stat-box" style="background-color: #00C853;">
+                        <div style="font-weight: bold;">WIN</div>
+                        <div>{{ player_data.player_row.win }}</div>
+                    </div>
+                    <div class="stat-box" style="background-color: #FF1744;">
+                        <div style="font-weight: bold;">LOSE</div>
+                        <div>{{ player_data.player_row.lose }}</div>
+                    </div>
+                    <div class="stat-box" style="background-color: grey;">
+                        <div style="font-weight: bold;">DRAW</div>
+                        <div>{{ player_data.player_row.draw }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-history">
+            {% for match in player_data.match_history %}
+                <div class="history-content">
+                    <div class="playerA"
+                         style="background-color: {{ match.player_A_hand | game_result(match.player_B_hand) }}">
+                        <div class="player-name">
+                            <a style="color:{% if match.player_A_name == player_data.player_name %}gold; font-weight:bold{% else %}white{% endif %}"
+                               href="/profile/{{ player_data.players_id[match.player_A_name] }}">
+                                <p>{{ match.player_A_name }}</p></a>
+                        </div>
+                        <div class="stat-icon-left">
+                            {% if (match.player_A_hand | lower) == "paper" %}
+                                <img src="{{ url_for('static', filename='/img/paper.png') }}">
+                            {% elif (match.player_A_hand | lower) == "rock" %}
+                                <img src="{{ url_for('static', filename='/img/rock.png') }}">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='/img/scissors.png') }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="playerB"
+                         style="background-color: {{ match.player_B_hand | game_result(match.player_A_hand) }}">
+                        <div class="stat-icon-right">
+                            {% if (match.player_B_hand | lower) == "paper" %}
+                                <img class="flip-hand" src="{{ url_for('static', filename='/img/paper.png') }}">
+                            {% elif (match.player_B_hand | lower) == "rock" %}
+                                <img class="flip-hand" src="{{ url_for('static', filename='/img/rock.png') }}">
+                            {% else %}
+                                <img class="flip-hand" src="{{ url_for('static', filename='/img/scissors.png') }}">
+                            {% endif %}
+                        </div>
+                        <div class="player-name">
+                            <a style="color:{% if match.player_B_name == player_data.player_name %}gold; font-weight: bold{% else %}white{% endif %}"
+                               href="/profile/{{ player_data.players_id[match.player_B_name] }}">
+                                <p>{{ match.player_B_name }}</p></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

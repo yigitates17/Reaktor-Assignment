@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block container %}
+    <div class="match-history">
+        <div class="match-history-content">MATCH HISTORY</div>
+        {% if matches %}
+            {% for match in matches %}
+                <div class="history-content">
+                    {# CHECKS IF PLAYER A WINS, CHANGES THE COLOR DEPENDS ON THE RESULT #}
+                    <div class="playerA"
+                         style="background-color: {{ match.player_A_hand | game_result(match.player_B_hand) }}">
+                        <div class="player-name">
+                            <a style="color:white" href="/profile/{{ players[match.player_A_name] }}">
+                                <p>{{ match.player_A_name }}</p></a>
+                        </div>
+                        <div class="stat-icon-left">
+                            {% if (match.player_A_hand | lower) == "paper" %}
+                                <img src="{{ url_for('static', filename='/img/paper.png') }}">
+                            {% elif (match.player_A_hand | lower) == "rock" %}
+                                <img src="{{ url_for('static', filename='/img/rock.png') }}">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='/img/scissors.png') }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    {# CHECKS IF PLAYER A WINS, CHANGES THE COLOR DEPENDS ON THE RESULT #}
+                    <div class="playerB"
+                         style="background-color: {{ match.player_B_hand | game_result(match.player_A_hand) }}">
+                        <div class="stat-icon-right">
+                            {% if (match.player_B_hand | lower) == "paper" %}
+                                <img class="flip-hand" src="{{ url_for('static', filename='/img/paper.png') }}">
+                            {% elif (match.player_B_hand | lower) == "rock" %}
+                                <img class="flip-hand" src="{{ url_for('static', filename='/img/rock.png') }}">
+                            {% else %}
+                                <img class="flip-hand" src="{{ url_for('static', filename='/img/scissors.png') }}">
+                            {% endif %}
+                        </div>
+                        <div class="player-name">
+                            <a style="color:white" href="/profile/{{ players[match.player_B_name] }}">
+                                <p>{{ match.player_B_name }}</p></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="history-content">
+                <div>No Data</div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock container %}

@@ -1,0 +1,241 @@
+.background {
+    background: rgb(255, 239, 61) url(img/bg-png.png) repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    width: 15%;
+    height: 15%;
+    justify-content: center;
+    align-content: center;
+    padding-top: 1px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 70%;
+    height: 70%;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    box-shadow: -2px 2px 4px 0 rgb(0 0 0 / 30%);
+}
+
+.live-games {
+    width: 100%;
+    height: 100%;
+    background-color: #28b4e5;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.profile-stats {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-sizing: content-box;
+}
+
+.profile-title {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    /*border-bottom: 2px solid rgba(0, 0, 0, 10%);*/
+}
+
+.stat-top {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.most-played {
+    width: 100%;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.hand-numbers {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 10%);
+}
+
+.hand-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.stat-bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.win-ratio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.stat-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 52%;
+    align-items: center;
+    border-left: 2px solid rgba(0, 0, 0, 10%);
+}
+
+.profile-history {
+    width: 100%;
+    height: 40%;
+    overflow: auto;
+}
+
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 100px;
+}
+
+.not-found-text {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 100px;
+}
+
+.match-history {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.match-history-content {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    /*border-left: 2px solid white;*/
+    /*border-bottom: 2px solid white;*/
+    /*border-right: 2px solid white;*/
+}
+
+.history-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.playerA {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    border-right: 0.25px solid #1e1e1e;
+}
+
+.playerB {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-left: 0.25px solid #1e1e1e;
+
+}
+
+.player-name {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+}
+
+.stat-icon-right {
+    display: flex;
+    margin-left: 25px;
+}
+
+.stat-icon-left {
+    display: flex;
+    margin-right: 25px;
+}
+
+html, :root, body, .background, .grid {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.flip-hand {
+    transform: scaleX(-1);
+}
