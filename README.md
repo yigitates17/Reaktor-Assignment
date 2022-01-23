@@ -23,3 +23,8 @@ On the profile page, users can still view on-going games. Other players' profile
 
 # NOTES:
 - App is not responsive.
+
+# REQUIREMENTS
+- Flask==2.0.1
+- Flask_SQLAlchemy==2.5.1
+- requests==2.26.0
