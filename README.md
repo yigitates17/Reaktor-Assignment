@@ -6,12 +6,8 @@ On the home page, users can view the on-going games (WebSocket feature is not av
 
 ![1](https://user-images.githubusercontent.com/69986916/150693565-4d5e1e37-64d7-44ee-9e28-e085acf12b18.JPG)
 
-WILL BE FIXED
-- WebSocket
-- Async Programming (App only uses the first two page of the API to receive data currently)
-
 # Profile Page
-On the profile page, users can still view on-going games several statistics of the selected player such as:
+On the profile page, users can still view on-going games. Other players' profiles are also accessible through here. Several statistics of the selected player can be seen such as:
 - Total Played Game Amount
 - Most Played Hand and Numbers of Each Played Hands
 - Win Rate along with Total Win, Draw, Lose Numbers
@@ -19,6 +15,11 @@ On the profile page, users can still view on-going games several statistics of t
 
 ![2](https://user-images.githubusercontent.com/69986916/150693751-995eb195-2eb5-4a6a-ae3a-ba733835043d.JPG)
 
-WILL BE FIXED
-- Async Programming will be added for profile pages.
-- WebSocket will be added for profile pages.
+
+# WILL BE FIXED:
+- WebSocket will be added for both Home and Profile Pages
+- Async Programming for Home Page (App only uses the first two page of the API to receive data currently)
+- Async Programming for Profile Pages.
+
+# NOTES:
+- App is not responsive.
