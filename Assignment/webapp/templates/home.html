@@ -5,7 +5,6 @@
         {% if matches %}
             {% for match in matches %}
                 <div class="history-content">
-                    {# CHECKS IF PLAYER A WINS, CHANGES THE COLOR DEPENDS ON THE RESULT #}
                     <div class="playerA"
                          style="background-color: {{ match.player_A_hand | game_result(match.player_B_hand) }}">
                         <div class="player-name">
@@ -22,7 +21,6 @@
                             {% endif %}
                         </div>
                     </div>
-                    {# CHECKS IF PLAYER A WINS, CHANGES THE COLOR DEPENDS ON THE RESULT #}
                     <div class="playerB"
                          style="background-color: {{ match.player_B_hand | game_result(match.player_A_hand) }}">
                         <div class="stat-icon-right">
