@@ -2,7 +2,7 @@
 A Work-In-Progress Assignment for Reaktor Internship Application
 
 # Home Page
-On the home page, users can view the on-going games (WebSocket feature is not available yet) and the recent 50 games. By clicking name of any player, users can reach player's profile page.
+On the home page, users can view the on-going games (WebSocket feature is not available yet) and the recent 50 games. By clicking name of any player, users can access player's profile page.
 
 ![1](https://user-images.githubusercontent.com/69986916/150693565-4d5e1e37-64d7-44ee-9e28-e085acf12b18.JPG)
 
