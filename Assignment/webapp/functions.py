@@ -112,7 +112,6 @@ def update_player(profile_id):
     player.scissors = hands["scissors"]
 
     db.session.commit()
-    pass
 
 
 def player_profile(profile_id):
