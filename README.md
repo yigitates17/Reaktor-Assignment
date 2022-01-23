@@ -16,7 +16,7 @@ On the profile page, users can still view on-going games several statistics of t
 - Most Played Hand and Numbers of Each Played Hands
 - Win Rate along with Total Win, Draw, Lose Numbers
 - Last 20 games of the player
-- 
+
 ![2](https://user-images.githubusercontent.com/69986916/150693751-995eb195-2eb5-4a6a-ae3a-ba733835043d.JPG)
 
 WILL BE FIXED
